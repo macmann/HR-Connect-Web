@@ -1,199 +1,137 @@
+import Link from "next/link";
 import { HeroBanner } from "@/components/layout/HeroBanner";
 
-const tocItems = [
-  { id: "architecture-overview", label: "Architecture Overview" },
-  { id: "core-capabilities", label: "Core Capabilities" },
-  { id: "project-structure", label: "Project Structure" },
-  { id: "tech-stack", label: "Tech Stack" },
-  { id: "local-development-setup", label: "Local Development Setup" },
-  { id: "environment-variables", label: "Environment Variables" },
-  { id: "authentication-and-authorization", label: "Authentication and Authorization" },
-  { id: "api-surface-high-level", label: "API Surface (High-Level)" },
-  { id: "scheduled-jobs-and-background-processing", label: "Scheduled Jobs and Background Processing" },
-  { id: "data-and-migration-scripts", label: "Data and Migration Scripts" },
-  { id: "testing", label: "Testing" },
-  { id: "operational-notes", label: "Operational Notes" },
-  { id: "deployment-guide", label: "Deployment Guide" },
-  { id: "license", label: "License" }
+const highlights = [
+  {
+    title: "Unified employee operations",
+    description:
+      "Manage onboarding, leave, payroll visibility, and profile workflows in one secure workspace for every employee."
+  },
+  {
+    title: "Faster hiring, better candidates",
+    description:
+      "Launch branded career pages, streamline candidate pipelines, and accelerate shortlisting with AI-assisted workflows."
+  },
+  {
+    title: "Built-in learning and performance",
+    description:
+      "Upskill teams with role-based learning paths and track progress with clear visibility for managers and HR leaders."
+  }
+];
+
+const platformFeatures = [
+  "Employee self-service portal",
+  "Leave planning and automated accruals",
+  "Recruitment and careers management",
+  "Learning hub with role sync",
+  "Admin controls and policy settings",
+  "Secure integrations and automation APIs"
+];
+
+const metrics = [
+  { value: "40%", label: "faster HR request turnaround" },
+  { value: "55%", label: "reduction in manual hiring steps" },
+  { value: "99.9%", label: "platform uptime for critical workflows" }
+];
+
+const testimonials = [
+  {
+    quote:
+      "HR Connect replaced scattered tools with one platform. Our HR team now spends less time on admin and more time supporting people.",
+    name: "Head of People, Mid-Market Fintech"
+  },
+  {
+    quote:
+      "From leave approvals to recruiting analytics, leadership finally has a single source of truth for workforce decisions.",
+    name: "HR Operations Manager, Regional Enterprise"
+  }
 ];
 
 export default function HomePage() {
   return (
-    <div className="space-y-10">
+    <div className="space-y-16">
       <HeroBanner
-        title="All-in-one HR operations platform"
-        subtitle="HR Connect is built with Node.js, Express, MongoDB, and a static front-end served by the same backend. It supports end-to-end workflows across employee operations, recruitment, learning, payroll, and admin tooling."
-        imageUrl="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1800&q=80"
+        title="The modern HR platform for growing teams"
+        subtitle="HR Connect helps organizations centralize employee operations, hiring, and learning in one high-impact, easy-to-adopt platform."
+        imageUrl="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=1800&q=80"
       />
 
-      <section aria-label="Table of Contents" className="rounded-2xl border border-neutral-200 bg-neutral-50 p-6">
-        <h2 className="text-xl font-semibold tracking-tight">Table of Contents</h2>
-        <ul className="mt-4 grid gap-2 sm:grid-cols-2">
-          {tocItems.map((item) => (
-            <li key={item.id}>
-              <a className="text-sm text-neutral-700 underline-offset-2 hover:underline" href={`#${item.id}`}>
-                {item.label}
-              </a>
+      <section aria-label="Key platform highlights" className="grid gap-4 md:grid-cols-3">
+        {highlights.map((item) => (
+          <article key={item.title} className="rounded-2xl border border-neutral-200 bg-white p-6 shadow-sm">
+            <h2 className="text-lg font-semibold tracking-tight">{item.title}</h2>
+            <p className="mt-2 text-sm leading-6 text-neutral-700">{item.description}</p>
+          </article>
+        ))}
+      </section>
+
+      <section className="grid gap-8 rounded-3xl bg-neutral-900 px-8 py-10 text-neutral-100 md:grid-cols-2 md:items-center">
+        <div>
+          <p className="text-sm uppercase tracking-[0.2em] text-neutral-300">Why teams choose HR Connect</p>
+          <h2 className="mt-3 text-3xl font-semibold tracking-tight">Everything HR needs to deliver a better employee experience</h2>
+          <p className="mt-4 text-neutral-300">
+            Replace fragmented HR tooling with a connected platform that supports the entire employee lifecycle, from candidate application to long-term growth.
+          </p>
+        </div>
+        <ul className="grid gap-3 text-sm sm:grid-cols-2">
+          {platformFeatures.map((feature) => (
+            <li key={feature} className="rounded-xl border border-neutral-700 bg-neutral-800 px-4 py-3">
+              {feature}
             </li>
           ))}
         </ul>
       </section>
 
-      <section id="architecture-overview" className="space-y-3">
-        <h2 className="text-2xl font-semibold tracking-tight">Architecture Overview</h2>
-        <ul className="list-disc space-y-2 pl-6 text-neutral-700">
-          <li>Single backend server (`server.js`) exposes REST endpoints and serves static UI assets from `public/`.</li>
-          <li>MongoDB is the primary datastore via the official `mongodb` driver.</li>
-          <li>Role-based access controls protect routes through `authRequired`, `managerOnly`, and `superadminOnly`.</li>
-          <li>Modular routes are mounted for HR, public careers, learning hub, and admin roles.</li>
-          <li>Cron jobs initialize at startup for leave and role-assignment reconciliation.</li>
-        </ul>
-      </section>
-
-      <section id="core-capabilities" className="space-y-4">
-        <h2 className="text-2xl font-semibold tracking-tight">Core Capabilities</h2>
-        <div className="space-y-4">
-          <article className="rounded-xl border border-neutral-200 p-5">
-            <h3 className="font-semibold">1) Employee + Identity Flows</h3>
-            <ul className="mt-2 list-disc space-y-1 pl-6 text-neutral-700">
-              <li>Local login via `/login` and optional Microsoft SSO.</li>
-              <li>Cookie + JWT-backed user context.</li>
-              <li>Profile endpoints including `/api/my-profile`, `/api/my-payslip`, and `/api/me`.</li>
-            </ul>
-          </article>
-          <article className="rounded-xl border border-neutral-200 p-5">
-            <h3 className="font-semibold">2) Leave Management</h3>
-            <ul className="mt-2 list-disc space-y-1 pl-6 text-neutral-700">
-              <li>Leave submission, entitlement calculations, reporting, export, and calendar endpoints.</li>
-              <li>Monthly accrual and leave-cycle reset cron jobs.</li>
-            </ul>
-          </article>
-          <article className="rounded-xl border border-neutral-200 p-5">
-            <h3 className="font-semibold">3) Recruitment + Careers</h3>
-            <ul className="mt-2 list-disc space-y-1 pl-6 text-neutral-700">
-              <li>Public careers pages, application submission, candidate lifecycle endpoints, and CV streaming.</li>
-              <li>Position analytics and AI interview/recruitment OpenAPI resources.</li>
-            </ul>
-          </article>
-          <article className="rounded-xl border border-neutral-200 p-5">
-            <h3 className="font-semibold">4) Learning Hub</h3>
-            <ul className="mt-2 list-disc space-y-1 pl-6 text-neutral-700">
-              <li>Protected learning routes mounted at `/api/learning-hub`.</li>
-              <li>Role assignment reconciliation with scheduled sync support.</li>
-            </ul>
-          </article>
-          <article className="rounded-xl border border-neutral-200 p-5">
-            <h3 className="font-semibold">5) Administration and Settings</h3>
-            <ul className="mt-2 list-disc space-y-1 pl-6 text-neutral-700">
-              <li>Admin role management, widget settings, token generation, email and AI settings APIs.</li>
-              <li>Post-login sync settings and integration hooks.</li>
-            </ul>
-          </article>
-          <article className="rounded-xl border border-neutral-200 p-5">
-            <h3 className="font-semibold">6) Pairing/Agent Integrations</h3>
-            <ul className="mt-2 list-disc space-y-1 pl-6 text-neutral-700">
-              <li>Signed pairing init, poll, and claim routes.</li>
-              <li>Replay/signature tolerance windows and rate limit controls via environment variables.</li>
-            </ul>
-          </article>
+      <section className="space-y-6">
+        <div className="space-y-2">
+          <p className="text-sm font-medium uppercase tracking-[0.2em] text-neutral-500">Business impact</p>
+          <h2 className="text-3xl font-semibold tracking-tight">Designed to drive measurable HR outcomes</h2>
+        </div>
+        <div className="grid gap-4 md:grid-cols-3">
+          {metrics.map((metric) => (
+            <article key={metric.label} className="rounded-2xl border border-neutral-200 bg-neutral-50 p-6">
+              <p className="text-3xl font-bold tracking-tight text-neutral-900">{metric.value}</p>
+              <p className="mt-2 text-sm text-neutral-700">{metric.label}</p>
+            </article>
+          ))}
         </div>
       </section>
 
-      <section id="project-structure" className="space-y-3">
-        <h2 className="text-2xl font-semibold tracking-tight">Project Structure</h2>
-        <pre className="overflow-x-auto rounded-xl bg-neutral-900 p-4 text-sm text-neutral-100">
-{`HR-Connect/
-├── api/
-├── cron/
-├── public/
-├── scripts/
-├── services/
-├── utils/
-├── db.js
-├── server.js
-├── pairingStore.js
-├── aiSettings.js
-└── README.md`}
-        </pre>
+      <section className="space-y-6">
+        <div className="space-y-2">
+          <p className="text-sm font-medium uppercase tracking-[0.2em] text-neutral-500">Customer stories</p>
+          <h2 className="text-3xl font-semibold tracking-tight">Trusted by people teams scaling with confidence</h2>
+        </div>
+        <div className="grid gap-4 md:grid-cols-2">
+          {testimonials.map((testimonial) => (
+            <figure key={testimonial.name} className="rounded-2xl border border-neutral-200 bg-white p-6">
+              <blockquote className="text-neutral-700">“{testimonial.quote}”</blockquote>
+              <figcaption className="mt-4 text-sm font-medium text-neutral-900">{testimonial.name}</figcaption>
+            </figure>
+          ))}
+        </div>
       </section>
 
-      <section id="tech-stack" className="space-y-2">
-        <h2 className="text-2xl font-semibold tracking-tight">Tech Stack</h2>
-        <p className="text-neutral-700">
-          Runtime: Node.js • Server: Express 5 • Database: MongoDB • Auth: JWT + cookies • Scheduling: node-cron • UI:
-          Tailwind CSS + PostCSS + Autoprefixer.
+      <section className="rounded-3xl border border-neutral-200 bg-gradient-to-r from-sky-50 to-indigo-50 px-8 py-10">
+        <p className="text-sm font-medium uppercase tracking-[0.2em] text-neutral-600">Get started</p>
+        <h2 className="mt-2 text-3xl font-semibold tracking-tight text-neutral-900">Build a high-performing workforce with HR Connect</h2>
+        <p className="mt-3 max-w-2xl text-neutral-700">
+          Centralize HR operations, improve hiring velocity, and empower employees with intuitive self-service. Bring your teams onto one platform built for growth.
         </p>
-      </section>
-
-      <section id="local-development-setup" className="space-y-3">
-        <h2 className="text-2xl font-semibold tracking-tight">Local Development Setup</h2>
-        <pre className="rounded-xl bg-neutral-900 p-4 text-sm text-neutral-100">{`npm install
-cp .env.example .env
-npm run dev`}</pre>
-        <p className="text-neutral-700">Default URL: `http://localhost:3000` • Careers: `http://localhost:3000/careers`.</p>
-      </section>
-
-      <section id="environment-variables" className="space-y-3">
-        <h2 className="text-2xl font-semibold tracking-tight">Environment Variables</h2>
-        <p className="text-neutral-700">
-          Configure server/CORS, admin bootstrap, database, SMTP, Microsoft SSO, pairing security, and widget token
-          settings through `.env`.
-        </p>
-      </section>
-
-      <section id="authentication-and-authorization" className="space-y-3">
-        <h2 className="text-2xl font-semibold tracking-tight">Authentication and Authorization</h2>
-        <ul className="list-disc space-y-2 pl-6 text-neutral-700">
-          <li>Main login endpoint: `POST /login`.</li>
-          <li>Optional Microsoft login flow starts at `GET /auth/microsoft`.</li>
-          <li>Route guards: `authRequired`, `managerOnly`, `superadminOnly`.</li>
-        </ul>
-      </section>
-
-      <section id="api-surface-high-level" className="space-y-3">
-        <h2 className="text-2xl font-semibold tracking-tight">API Surface (High-Level)</h2>
-        <p className="text-neutral-700">
-          Includes employee/profile, performance, leave, recruitment, public careers + AI interview, learning hub,
-          admin roles, settings, and pairing endpoint groups.
-        </p>
-      </section>
-
-      <section id="scheduled-jobs-and-background-processing" className="space-y-3">
-        <h2 className="text-2xl font-semibold tracking-tight">Scheduled Jobs and Background Processing</h2>
-        <p className="text-neutral-700">
-          Startup initializes `monthlyLeaveCron`, `resetLeaveCycle`, and `learningRoleAssignmentSync` with production
-          guards to avoid duplicate in-memory schedulers.
-        </p>
-      </section>
-
-      <section id="data-and-migration-scripts" className="space-y-3">
-        <h2 className="text-2xl font-semibold tracking-tight">Data and Migration Scripts</h2>
-        <pre className="rounded-xl bg-neutral-900 p-4 text-sm text-neutral-100">{`node scripts/migrateLeaveSystem.js`}</pre>
-      </section>
-
-      <section id="testing" className="space-y-3">
-        <h2 className="text-2xl font-semibold tracking-tight">Testing</h2>
-        <pre className="rounded-xl bg-neutral-900 p-4 text-sm text-neutral-100">{`npm test`}</pre>
-      </section>
-
-      <section id="operational-notes" className="space-y-3">
-        <h2 className="text-2xl font-semibold tracking-tight">Operational Notes</h2>
-        <ul className="list-disc space-y-2 pl-6 text-neutral-700">
-          <li>Use strong random secrets in non-dev environments.</li>
-          <li>Avoid exposing production bearer tokens in frontend code.</li>
-          <li>Validate CORS and cookie policy together behind proxies/custom domains.</li>
-          <li>Ensure persistent storage for `/uploads` in production.</li>
-        </ul>
-      </section>
-
-      <section id="deployment-guide" className="space-y-3">
-        <h2 className="text-2xl font-semibold tracking-tight">Deployment Guide</h2>
-        <p className="text-neutral-700">See `DEPLOYMENT.md` for VM provisioning, TLS, rollouts, backups, and troubleshooting.</p>
-      </section>
-
-      <section id="license" className="space-y-3">
-        <h2 className="text-2xl font-semibold tracking-tight">License</h2>
-        <p className="text-neutral-700">This project includes a LICENSE file at the repository root.</p>
+        <div className="mt-6 flex flex-wrap gap-3">
+          <Link
+            href="/insights"
+            className="rounded-full bg-neutral-900 px-5 py-2.5 text-sm font-medium text-white transition hover:bg-neutral-700"
+          >
+            Explore insights
+          </Link>
+          <a
+            href="mailto:sales@hrconnect.example"
+            className="rounded-full border border-neutral-400 px-5 py-2.5 text-sm font-medium text-neutral-800 transition hover:bg-white"
+          >
+            Contact sales
+          </a>
+        </div>
       </section>
     </div>
   );
