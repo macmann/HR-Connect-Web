@@ -1,0 +1,7 @@
+services:
+  - type: web
+    name: hr-connect-web
+    env: static
+    buildCommand: npm ci && npm run build
+    staticPublishPath: out
+    pullRequestPreviewsEnabled: true
