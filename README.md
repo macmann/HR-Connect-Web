@@ -1,48 +1,38 @@
-<<<<<<< HEAD
-# Next.js App Router + TypeScript + Tailwind + MDX Scaffold
+# HR Connect Website
 
-This repository is a ready-to-push scaffold for:
-- Next.js (App Router)
-- TypeScript
-- Tailwind CSS
-- MDX-powered **Insights** section (content stored in `content/insights/*.mdx`)
+This repository contains a static website for **HR Connect**, designed to be deployable on **Render.com**.
 
-## Quick start
+## What it includes
+
+- A polished landing/documentation page summarizing platform architecture, capabilities, and operations
+- Static-exported Next.js output (`next export` via `output: "export"`)
+- Render deployment configuration in `render.yaml`
+
+## Local development
 
 ```bash
 npm install
 npm run dev
 ```
 
-Open:
-- Home: http://localhost:3000
-- Insights: http://localhost:3000/insights
+Open [http://localhost:3000](http://localhost:3000).
 
-## Add a new MDX post
+## Production build (static)
 
-Create a file in:
-
-`content/insights/<your-slug>.mdx`
-
-Example frontmatter:
-
-```mdx
----
-title: "My Post"
-date: "2026-01-24"
-summary: "Short summary"
-tags: ["tag1", "tag2"]
-published: true
----
+```bash
+npm run build
 ```
 
-Then it will appear on `/insights`.
+The generated static site is written to `out/`.
 
-## Notes
+## Deploy to Render
 
-- MDX rendering is handled via `next-mdx-remote/rsc` (server components-friendly).
-- Post listing and detail pages read files from disk on the server.
-=======
-# OSS
-OSS for API and System Availability with Human Triggered Announcements 
->>>>>>> 507ef8486f7be6149d8b07e521253bc138368336
+This repo includes `render.yaml` configured for a static deployment.
+
+- **Service type:** Static Site
+- **Build command:** `npm ci && npm run build`
+- **Publish directory:** `out`
+
+You can either:
+1. Connect the repository in Render and let it auto-detect `render.yaml`, or
+2. Manually configure a Static Site using the same build/publish settings.

@@ -6,10 +6,10 @@ import { Container } from "@/components/layout/Container";
 
 export const metadata: Metadata = {
   title: {
-    default: "Scaffold",
-    template: "%s | Scaffold"
+    default: "HR Connect",
+    template: "%s | HR Connect"
   },
-  description: "Next.js (App Router) + TypeScript + Tailwind + MDX scaffold"
+  description: "HR Connect platform overview and deployment-ready static documentation site."
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
