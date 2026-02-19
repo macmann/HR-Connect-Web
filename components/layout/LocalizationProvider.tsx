@@ -16,7 +16,7 @@ export function LocalizationProvider({ children }: { children: React.ReactNode }
 
   useEffect(() => {
     const saved = window.localStorage.getItem("locale") as Locale | null;
-    if (saved === "en" || saved === "my") {
+    if (saved === "en" || saved === "my" || saved === "th") {
       setLocale(saved);
     }
   }, []);

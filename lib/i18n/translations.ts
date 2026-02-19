@@ -1,4 +1,4 @@
-export type Locale = "en" | "my";
+export type Locale = "en" | "my" | "th";
 
 type TranslationSchema = {
   siteName: string;
@@ -10,6 +10,7 @@ type TranslationSchema = {
     languageLabel: string;
     english: string;
     myanmar: string;
+    thai: string;
   };
   home: {
     heroTitle: string;
@@ -66,7 +67,7 @@ type TranslationSchema = {
   };
 };
 
-export const translations: Record<Locale, TranslationSchema> = {
+export const translations = {
   en: {
     siteName: "B Connect",
     nav: {
@@ -76,7 +77,8 @@ export const translations: Record<Locale, TranslationSchema> = {
       contactUs: "Contact Us",
       languageLabel: "Language",
       english: "English",
-      myanmar: "မြန်မာ"
+      myanmar: "မြန်မာ",
+      thai: "ไทย"
     },
     home: {
       heroTitle: "The modern HR platform for growing teams",
@@ -154,7 +156,7 @@ export const translations: Record<Locale, TranslationSchema> = {
   },
   my: {
     siteName: "B Connect",
-    nav: { home: "ပင်မ", features: "အင်္ဂါရပ်များ", deployment: "တပ်ဆင်ခြင်း", contactUs: "ဆက်သွယ်ရန်", languageLabel: "ဘာသာစကား", english: "English", myanmar: "မြန်မာ" },
+    nav: { home: "ပင်မ", features: "အင်္ဂါရပ်များ", deployment: "တပ်ဆင်ခြင်း", contactUs: "ဆက်သွယ်ရန်", languageLabel: "ဘာသာစကား", english: "English", myanmar: "မြန်မာ", thai: "ไทย" },
     home: {
       heroTitle: "ဖွံ့ဖြိုးလာသော အဖွဲ့များအတွက် ခေတ်မီ HR ပလက်ဖောင်း",
       heroSubtitle: "B Connect သည် ဝန်ထမ်းလုပ်ငန်းစဉ်များ၊ ခေါ်ယူမှုလုပ်ငန်းများနှင့် လေ့လာသင်ယူမှုများကို တစ်နေရာတည်းတွင် အလွယ်တကူ စုစည်းစီမံနိုင်ရန် ကူညီပေးသည်။",
@@ -228,5 +230,34 @@ export const translations: Record<Locale, TranslationSchema> = {
       ctaButton: "Demo တောင်းဆိုရန်"
     },
     common: { loading: "တင်နေသည်...", errorTitle: "ပြဿနာတစ်ခု ဖြစ်ပွားခဲ့သည်", tryAgain: "ထပ်မံကြိုးစားပါ", notFoundTitle: "စာမျက်နှာ မတွေ့ပါ", notFoundDescription: "သင်ရှာဖွေနေသော စာမျက်နှာမရှိပါ။", goHome: "ပင်မသို့ သွားရန်" }
+  },
+} as Record<Locale, TranslationSchema>;
+
+translations.th = {
+  ...translations.en,
+  nav: {
+    ...translations.en.nav,
+    home: "หน้าแรก",
+    features: "ฟีเจอร์",
+    deployment: "การติดตั้ง",
+    contactUs: "ติดต่อเรา",
+    languageLabel: "ภาษา",
+    english: "อังกฤษ",
+    myanmar: "พม่า",
+    thai: "ไทย"
+  },
+  home: {
+    ...translations.en.home,
+    heroTitle: "แพลตฟอร์ม HR สมัยใหม่สำหรับทีมที่กำลังเติบโต",
+    heroSubtitle: "B Connect ช่วยให้องค์กรรวมงานพนักงาน การสรรหา และการเรียนรู้ไว้ในแพลตฟอร์มเดียวที่ใช้งานง่าย"
+  },
+  common: {
+    ...translations.en.common,
+    loading: "กำลังโหลด...",
+    errorTitle: "เกิดข้อผิดพลาดบางอย่าง",
+    tryAgain: "ลองอีกครั้ง",
+    notFoundTitle: "ไม่พบหน้า",
+    notFoundDescription: "ไม่พบหน้าที่คุณกำลังค้นหา",
+    goHome: "กลับหน้าแรก"
   }
 };

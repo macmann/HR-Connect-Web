@@ -27,6 +27,7 @@ export function Header() {
             >
               <option value="en">{t.nav.english}</option>
               <option value="my">{t.nav.myanmar}</option>
+              <option value="th">{t.nav.thai}</option>
             </select>
           </div>
 
