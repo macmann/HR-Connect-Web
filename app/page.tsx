@@ -37,7 +37,7 @@ const metrics = [
 const testimonials = [
   {
     quote:
-      "HR Connect replaced scattered tools with one platform. Our HR team now spends less time on admin and more time supporting people.",
+      "B Connect replaced scattered tools with one platform. Our HR team now spends less time on admin and more time supporting people.",
     name: "Head of People, Mid-Market Fintech"
   },
   {
@@ -52,7 +52,7 @@ export default function HomePage() {
     <div className="space-y-16">
       <HeroBanner
         title="The modern HR platform for growing teams"
-        subtitle="HR Connect helps organizations centralize employee operations, hiring, and learning in one high-impact, easy-to-adopt platform."
+        subtitle="B Connect helps organizations centralize employee operations, hiring, and learning in one high-impact, easy-to-adopt platform."
         imageUrl="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=1800&q=80"
       />
 
@@ -67,7 +67,7 @@ export default function HomePage() {
 
       <section className="grid gap-8 rounded-3xl bg-neutral-900 px-8 py-10 text-neutral-100 md:grid-cols-2 md:items-center">
         <div>
-          <p className="text-sm uppercase tracking-[0.2em] text-neutral-300">Why teams choose HR Connect</p>
+          <p className="text-sm uppercase tracking-[0.2em] text-neutral-300">Why teams choose B Connect</p>
           <h2 className="mt-3 text-3xl font-semibold tracking-tight">Everything HR needs to deliver a better employee experience</h2>
           <p className="mt-4 text-neutral-300">
             Replace fragmented HR tooling with a connected platform that supports the entire employee lifecycle, from candidate application to long-term growth.
@@ -114,7 +114,7 @@ export default function HomePage() {
 
       <section className="rounded-3xl border border-neutral-200 bg-gradient-to-r from-sky-50 to-indigo-50 px-8 py-10">
         <p className="text-sm font-medium uppercase tracking-[0.2em] text-neutral-600">Get started</p>
-        <h2 className="mt-2 text-3xl font-semibold tracking-tight text-neutral-900">Build a high-performing workforce with HR Connect</h2>
+        <h2 className="mt-2 text-3xl font-semibold tracking-tight text-neutral-900">Build a high-performing workforce with B Connect</h2>
         <p className="mt-3 max-w-2xl text-neutral-700">
           Centralize HR operations, improve hiring velocity, and empower employees with intuitive self-service. Explore product capabilities and launch confidently with our deployment guide.
         </p>
@@ -126,7 +126,7 @@ export default function HomePage() {
             Explore features
           </Link>
           <a
-            href="mailto:sales@hrconnect.example"
+            href="mailto:sales@b-connect.site"
             className="rounded-full border border-neutral-400 px-5 py-2.5 text-sm font-medium text-neutral-800 transition hover:bg-white"
           >
             Contact sales

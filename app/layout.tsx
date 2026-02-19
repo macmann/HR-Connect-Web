@@ -6,10 +6,10 @@ import { Container } from "@/components/layout/Container";
 
 export const metadata: Metadata = {
   title: {
-    default: "HR Connect",
-    template: "%s | HR Connect"
+    default: "B Connect",
+    template: "%s | B Connect"
   },
-  description: "HR Connect platform overview and deployment-ready static documentation site."
+  description: "B Connect platform overview and deployment-ready static documentation site."
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
