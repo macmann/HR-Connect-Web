@@ -12,7 +12,7 @@ type LocalizationContextValue = {
 const LocalizationContext = createContext<LocalizationContextValue | null>(null);
 
 export function LocalizationProvider({ children }: { children: React.ReactNode }) {
-  const [locale, setLocale] = useState<Locale>("my");
+  const [locale, setLocale] = useState<Locale>("en");
 
   useEffect(() => {
     const saved = window.localStorage.getItem("locale") as Locale | null;
