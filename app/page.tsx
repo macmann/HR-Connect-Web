@@ -116,14 +116,14 @@ export default function HomePage() {
         <p className="text-sm font-medium uppercase tracking-[0.2em] text-neutral-600">Get started</p>
         <h2 className="mt-2 text-3xl font-semibold tracking-tight text-neutral-900">Build a high-performing workforce with HR Connect</h2>
         <p className="mt-3 max-w-2xl text-neutral-700">
-          Centralize HR operations, improve hiring velocity, and empower employees with intuitive self-service. Bring your teams onto one platform built for growth.
+          Centralize HR operations, improve hiring velocity, and empower employees with intuitive self-service. Explore product capabilities and launch confidently with our deployment guide.
         </p>
         <div className="mt-6 flex flex-wrap gap-3">
           <Link
-            href="/insights"
+            href="/features"
             className="rounded-full bg-neutral-900 px-5 py-2.5 text-sm font-medium text-white transition hover:bg-neutral-700"
           >
-            Explore insights
+            Explore features
           </Link>
           <a
             href="mailto:sales@hrconnect.example"
