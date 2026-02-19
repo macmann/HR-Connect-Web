@@ -3,6 +3,7 @@ import "./globals.css";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { Container } from "@/components/layout/Container";
+import { LocalizationProvider } from "@/components/layout/LocalizationProvider";
 
 export const metadata: Metadata = {
   title: {
@@ -14,11 +15,13 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en">
+    <html lang="my">
       <body className="min-h-screen bg-white text-neutral-900">
-        <Header />
-        <Container className="py-10">{children}</Container>
-        <Footer />
+        <LocalizationProvider>
+          <Header />
+          <Container className="py-10">{children}</Container>
+          <Footer />
+        </LocalizationProvider>
       </body>
     </html>
   );

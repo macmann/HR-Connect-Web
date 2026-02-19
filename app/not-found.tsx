@@ -1,12 +1,17 @@
+"use client";
+
 import Link from "next/link";
+import { useLocalization } from "@/components/layout/LocalizationProvider";
 
 export default function NotFound() {
+  const { t } = useLocalization();
+
   return (
     <div className="space-y-4">
-      <h1 className="text-2xl font-semibold">Page not found</h1>
-      <p className="text-neutral-700">The page you are looking for does not exist.</p>
+      <h1 className="text-2xl font-semibold">{t.common.notFoundTitle}</h1>
+      <p className="text-neutral-700">{t.common.notFoundDescription}</p>
       <Link className="underline" href="/">
-        Go home
+        {t.common.goHome}
       </Link>
     </div>
   );
