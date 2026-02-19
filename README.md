@@ -1,6 +1,6 @@
-# HR Connect Website
+# B Connect Website
 
-This repository contains a static website for **HR Connect**, designed to be deployable on **Render.com**.
+This repository contains a static website for **B Connect**, designed to be deployable on **Render.com**.
 
 ## What it includes
 

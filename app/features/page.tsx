@@ -28,7 +28,7 @@ const featureGroups = [
   {
     icon: "⚡",
     title: "Automation & Integrations",
-    description: "Connect HR Connect with payroll, identity, and collaboration tools to eliminate repetitive manual steps.",
+    description: "Connect B Connect with payroll, identity, and collaboration tools to eliminate repetitive manual steps.",
     items: ["Webhook + API support", "Payroll sync connectors", "Automated approval reminders"]
   },
   {
@@ -48,7 +48,7 @@ export default function FeaturesPage() {
     <div className="space-y-12">
       <HeroBanner
         title="Everything you need to run modern HR"
-        subtitle="Explore the complete HR Connect feature set built for employee operations, hiring, growth, and compliance."
+        subtitle="Explore the complete B Connect feature set built for employee operations, hiring, growth, and compliance."
         imageUrl="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1800&q=80"
       />
 
@@ -56,7 +56,7 @@ export default function FeaturesPage() {
         <p className="text-sm font-medium uppercase tracking-[0.2em] text-neutral-500">Platform features</p>
         <h2 className="text-3xl font-semibold tracking-tight">Built for HR teams that need speed and clarity</h2>
         <p className="max-w-3xl text-neutral-700">
-          HR Connect combines day-to-day HR workflows with strategic capabilities so teams can support employees at every stage of the lifecycle.
+          B Connect combines day-to-day HR workflows with strategic capabilities so teams can support employees at every stage of the lifecycle.
         </p>
       </section>
 

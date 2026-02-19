@@ -6,7 +6,7 @@ const steps = [
     details: [
       "Install Node.js 20+ and npm.",
       "Create environment variables for production values.",
-      "Confirm your repository has the latest HR Connect changes."
+      "Confirm your repository has the latest B Connect changes."
     ]
   },
   {
@@ -45,13 +45,13 @@ export default function DeploymentPage() {
     <div className="space-y-12">
       <HeroBanner
         title="Deployment guide"
-        subtitle="Follow this guide to deploy HR Connect reliably and validate your production environment."
+        subtitle="Follow this guide to deploy B Connect reliably and validate your production environment."
         imageUrl="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=1800&q=80"
       />
 
       <section className="space-y-4">
         <p className="text-sm font-medium uppercase tracking-[0.2em] text-neutral-500">Production rollout</p>
-        <h2 className="text-3xl font-semibold tracking-tight">Deploy HR Connect in four clear phases</h2>
+        <h2 className="text-3xl font-semibold tracking-tight">Deploy B Connect in four clear phases</h2>
       </section>
 
       <section className="grid gap-4">
