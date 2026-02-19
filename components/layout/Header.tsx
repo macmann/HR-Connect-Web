@@ -4,7 +4,7 @@ import Link from "next/link";
 import { Locale } from "@/lib/i18n/translations";
 import { useLocalization } from "@/components/layout/LocalizationProvider";
 
-const logoUrl = "https://i.ibb.co/qYk1RXqT/Gemini-Generated-Image-8rfn768rfn768rfn.png";
+const logoUrl = "https://i.ibb.co/gLJMYFwW/Gemini-Generated-Image-faynn3faynn3fayn.png";
 
 export function Header() {
   const { locale, setLocale, t } = useLocalization();
