@@ -18,9 +18,12 @@ export function Header() {
   return (
     <header className="sticky top-0 z-40 border-b border-neutral-200 bg-white/95 backdrop-blur">
       <div className="mx-auto flex max-w-5xl items-start justify-between px-4 py-3">
-        <Link href="/" className="flex items-center">
-          <img src={logoUrl} alt={`${t.siteName} logo`} className="h-24 w-auto aspect-video object-cover" />
-        </Link>
+        <div className="flex flex-col">
+          <Link href="/" className="flex items-center">
+            <img src={logoUrl} alt={`${t.siteName} logo`} className="h-24 w-auto aspect-video object-cover" />
+          </Link>
+          <p className="-mt-2 text-xs font-medium text-neutral-600">{t.siteTagline}</p>
+        </div>
 
         <div className="flex flex-col items-end gap-3">
           <div className="flex items-center gap-2 text-neutral-600" role="group" aria-label="Language switch">

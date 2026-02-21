@@ -6,11 +6,8 @@ import { Container } from "@/components/layout/Container";
 import { LocalizationProvider } from "@/components/layout/LocalizationProvider";
 
 export const metadata: Metadata = {
-  title: {
-    default: "B Connect",
-    template: "%s | B Connect"
-  },
-  description: "B Connect platform overview and deployment-ready static documentation site."
+  title: "Best Connect: Smarter Operations. Stronger Connections",
+  description: "Best Connect: Smarter Operations. Stronger Connections"
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
