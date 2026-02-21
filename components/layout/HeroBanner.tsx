@@ -12,7 +12,7 @@ export function HeroBanner({ title, subtitle, imageUrl, overlayClassName = "bg-b
       style={{ backgroundImage: `url('${imageUrl}')` }}
     >
       <div className={`absolute inset-0 ${overlayClassName}`} />
-      <div className="relative px-8 py-16 text-white sm:px-12">
+      <div className="relative min-h-[24rem] px-8 py-20 text-white sm:min-h-[28rem] sm:px-12 sm:py-24">
         <h1 className="max-w-3xl text-4xl font-semibold tracking-tight">{title}</h1>
         <p className="mt-4 max-w-3xl text-neutral-100">{subtitle}</p>
       </div>
