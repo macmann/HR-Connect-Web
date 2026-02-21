@@ -54,6 +54,9 @@ export function Header() {
             <Link className="text-neutral-700 hover:text-neutral-900" href="/deployment">
               {t.nav.deployment}
             </Link>
+            <Link className="text-neutral-700 hover:text-neutral-900" href="/demo">
+              Demo
+            </Link>
             <Link className="text-neutral-700 hover:text-neutral-900" href="/contact-us">
               {t.nav.contactUs}
             </Link>
