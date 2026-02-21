@@ -2,6 +2,7 @@ export type Locale = "en" | "my" | "th";
 
 type TranslationSchema = {
   siteName: string;
+  siteTagline: string;
   nav: {
     home: string;
     features: string;
@@ -70,6 +71,7 @@ type TranslationSchema = {
 export const translations = {
   en: {
     siteName: "B Connect",
+    siteTagline: "Best Connect: Smarter Operations. Stronger Connections",
     nav: {
       home: "Home",
       features: "Features",
@@ -156,6 +158,7 @@ export const translations = {
   },
   my: {
     siteName: "B Connect",
+    siteTagline: "Best Connect: Smarter Operations. Stronger Connections",
     nav: { home: "ပင်မ", features: "အင်္ဂါရပ်များ", deployment: "တပ်ဆင်ခြင်း", contactUs: "ဆက်သွယ်ရန်", languageLabel: "ဘာသာစကား", english: "English", myanmar: "မြန်မာ", thai: "ไทย" },
     home: {
       heroTitle: "ဖွံ့ဖြိုးလာသော အဖွဲ့များအတွက် ခေတ်မီ HR ပလက်ဖောင်း",
@@ -235,6 +238,7 @@ export const translations = {
 
 translations.th = {
   siteName: "B Connect",
+  siteTagline: "Best Connect: Smarter Operations. Stronger Connections",
   nav: {
     home: "หน้าแรก",
     features: "ฟีเจอร์",
